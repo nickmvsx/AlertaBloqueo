@@ -10,6 +10,9 @@ permissions:
 jobs:
   apk:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: AlertaBloqueo
     steps:
       - uses: actions/checkout@v4
 
@@ -36,5 +39,5 @@ jobs:
           tag_name: v1.${{ github.run_number }}
           name: Alerta Bloqueo v1.${{ github.run_number }}
           body: Descarga **AlertaBloqueo.apk** desde el celular e instálalo.
-          files: AlertaBloqueo.apk
+          files: AlertaBloqueo/AlertaBloqueo.apk
           make_latest: true
